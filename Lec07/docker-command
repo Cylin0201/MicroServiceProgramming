@@ -1,3 +1,4 @@
+#BasicCommand
 docker pull
 dockere build
 docker image ls
@@ -8,9 +9,15 @@ docker container ls -aq
 docker container stop
 docker container kill
 
+#Information Command
 docker --version
 docker system info
 docker system df
 docker ps
 docker stats
 docker search
+
+#Clean-up Command
+docker image rm -f
+docker container rm -f
+docker system prune
