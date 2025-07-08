@@ -1,0 +1,16 @@
+docker pull
+dockere build
+docker image ls
+docker container run
+docker container ls
+docker container ls -a
+docker container ls -aq
+docker container stop
+docker container kill
+
+docker --version
+docker system info
+docker system df
+docker ps
+docker stats
+docker search
