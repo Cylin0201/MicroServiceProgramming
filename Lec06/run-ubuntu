@@ -1,5 +1,17 @@
 docker pull ubuntu
+# Download the latest Ubuntu image from Docker Hub
+
 docker container run -ti -d --rm --name ubuntuos ubuntu:latest
+# Run a new container named 'ubuntuos' in the background (-d)
+# -t allocates a pseudo-TTY, -i keeps STDIN open
+# --rm automatically removes the container when it stops
+# Uses the latest Ubuntu image
+
 docker exec -it ubuntuos /bin/bash
-docker container ls 
+# Start an interactive Bash session inside the 'ubuntuos' container
+
+docker container ls
+# List all running containers
+
 docker image ls
+# List all downloaded Docker images on the system
