@@ -1,1 +1,3 @@
 docker run hello-world
+# Download and run the 'hello-world' image
+# This is a test image that verifies if Docker is installed and working correctly
