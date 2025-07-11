@@ -1,0 +1,21 @@
+docker compose up -d
+docker container ls
+
+curl http://localhost:8001
+curl http://localhost:8002
+
+docker container exec -ti {manager container ID} /bin/sh
+apk add curl
+curl http://worker1:80
+curl http://worker2:80
+exit
+
+docker compose down
+
+---
+
+docker compose up -d --scale manager=4
+docker container ls
+docker compose ps
+docker compose logs
+docker compose down

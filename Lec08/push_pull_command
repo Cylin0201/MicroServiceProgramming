@@ -1,7 +1,7 @@
 #1. docker 로그인하기
 docker login
 
-#2. docker hub의 이미지 가져오기
+#2. docker hub에서 이미지 가져오기
 docker pull cylin01/my-spring-app
 
 #3. docker hub에 이미지 푸시하기
