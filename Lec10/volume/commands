@@ -1,0 +1,49 @@
+#Step 1: Create Volume
+docker volume --help
+docker volume create myvol-1
+docker volume ls
+
+#Step 2: Inpect created volume
+docker volume inspect myvol-1
+
+#Step 3: Install Jenkins
+docker pull jenkins/jenkins:lts-jdk11
+
+#Step 4: Execute Jenkins with Volume
+docker run -p 8080:8080 -p 50000:50000 -v myvol-1:/var/jenkins_home jenkins/jenkins:lts-jdk11
+
+
+#Step 5: Confirm Installation
+Connect to http://localhost:8080
+Login
+
+#Step 6: Jenkins Upgrade
+Logout jenkins
+docker container stop {jenkins container ID}
+docker volume ls
+docker volume inspect myvol-1
+
+docker run --name jenkins-production \
+--detach \
+-p 50000:50000 \
+-p 8080:8080 \
+-v myvol-1:/var/jenkins_home\
+jenkins/jenkins:lts-jdk11
+
+#Step 7: Execute Jenkins Again
+Access to http://localhost:8080
+Check Jenkins Status
+
+#Step 8: Create & Execute Job
+Select "새 작업" and input first job name
+
+Select "Build" and select "Execute shell"
+Type "ls" command, then select "Apply" & "Save"
+
+#Step 9: Remove Volume
+docker volume ls
+docker volume rm {volume name}
+docker volume prune
+
+#Summary
+1. **Container gone, But data remain.**
