@@ -1,0 +1,9 @@
+docker build -t myubuntu:1.0 .
+docker image ls
+docker run --name myubuntu-nginx -d -p 4000:80 myubuntu:1.0
+docker ps
+docker stats
+docker container stop 
+docker container rm 
+docker image rm
+

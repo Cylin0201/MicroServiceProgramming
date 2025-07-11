@@ -1,0 +1,10 @@
+docker build -t myjsserver:1.0 .
+docker image ls
+docker run --name myjswebserver -d -p 8080:8080 myjsserver:1.0
+
+docker container ls
+docker stats
+
+docker containner stop & rm
+
+docker image rm 

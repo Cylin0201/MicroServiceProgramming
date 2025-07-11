@@ -1,0 +1,9 @@
+docker build -t mywebserver:1.0 .
+docker image ls 
+docker run --name mypyserver -d -p 8090:9000 mywebserver:1.0
+docker ps
+docker stats
+
+docker container stop
+docker container rm
+docker image rm
